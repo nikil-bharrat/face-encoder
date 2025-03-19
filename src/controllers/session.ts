@@ -1,7 +1,7 @@
 import express from "express";
 import { createSession, getSessionById } from "../db/sessions";
 
-export const initialiseSession = async (
+export const session = async (
   req: express.Request,
   res: express.Response
 ) => {

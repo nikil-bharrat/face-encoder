@@ -1,8 +1,8 @@
 import express from "express";
 
-import { getSession, initialiseSession } from "../controllers/session";
+import { getSession, session } from "../controllers/session";
 
 export default (router: express.Router) => {
-  router.post("/session/create", initialiseSession);
+  router.post("/session/create", session);
   router.get("/session", getSession);
 };
