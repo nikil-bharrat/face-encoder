@@ -7,6 +7,9 @@ export const initialiseSession = async (
 ) => {
   try {
     const { customerId, faceEncodings } = req.body;
+    
+    // If there was auth logic, I'd call it here
+    // if(!isAuthenticated()) { return res.sendStatus(403)}
 
     if (!customerId) {
       return res.sendStatus(400);
@@ -40,6 +43,9 @@ export const getSession = async (
 ) => {
   try {
     const { sessionId } = req.body;
+
+    // If there was auth logic, I'd call it here
+    // if(!isAuthenticated()) { return res.sendStatus(403)}
 
     if (!sessionId) {
       return res.sendStatus(400);
