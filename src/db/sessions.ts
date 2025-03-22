@@ -10,7 +10,7 @@ const SessionSchema = new mongoose.Schema({
     required: true,
   },
   faceEncodings: {
-    type: Array<String>,
+    type: Array<any>,
     required: false,
   },
 });
@@ -20,9 +20,9 @@ export const SessionModel = mongoose.model("Session", SessionSchema);
 export const createSession = (values: Record<string, any>) =>
   new SessionModel(values).save().then((session) => session.toObject());
 
-export const getUserBySessionToken = (sessionToken: string) =>
-  SessionModel.findOne({
-    "authentication.sessionToken": sessionToken,
-  });
+// export const getUserBySessionToken = (sessionToken: string) =>
+//   SessionModel.findOne({
+//     "authentication.sessionToken": sessionToken,
+//   });
 
 export const getSessionById = (sessionId: string) => SessionModel.findById(sessionId);
